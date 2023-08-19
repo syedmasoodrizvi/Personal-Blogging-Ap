@@ -34,10 +34,11 @@
   .blog {
     background-color: white;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 60%;
     margin-left: 200px;
+ 
   }
   .blog-title {
     font-size: 20px;
@@ -114,7 +115,6 @@
     
     <br>
     
-    
 </div>
 <div id="blogs-section">
   
@@ -129,10 +129,33 @@
                 <button id="button">Publish Blog</button>
             </div>
         </center>
-       
-          
         </div>
+      </div>
 
+      <h3 style="margin-top: -50px;margin-left: 210px;">My Blogs</h3>
+        <div class="blog" style="margin-top: 10px;">
+          <div class="blog-meta">
+            <img src="./pngtree-user-icon-png-image_1796659.jpg" alt="Profile Picture" style="margin-left: 10px;">
+            <div>  
+              <div class="blog-title" style="color: black;">PCB should support retired empires and players.</div>
+                <div>Faisal Iqbal - July 09, 2023 </div>
+                
+              </div>
+            </div>
+          
+          <div class="blog-content">
+              Cricket, often referred to as a "gentleman's game," has evolved into a global phenomenon that transcends borders, cultures, and languages. 
+              With its rich history, thrilling matches, and fervent fan base, cricket has become more than just a sport; it's a way of life for millions around the 
+              world. This essay explores the origins, popularity, and impact of cricket on society. Despite its immense popularity, cricket faces challenges such as 
+              maintaining a balance between different formats of the game (Test, One-Day, and T20), ensuring player well-being, and combating corruption. However, 
+              these challenges also present opportunities for the sport's administrators, players, and fans to collaborate in ensuring its long-term success.
+              In conclusion, cricket is more than a game; it's a cultural phenomenon that unites people, ignites passion, and influences societies across the globe. 
+              Its journey from humble beginnings to international stardom reflects the power of sports to bridge divides and bring joy to millions. Cricket's timeless
+               appeal continues to inspire new generations and shape the narrative of an ever-evolving world.
+          </div>
+          
+         
+    
 <script>
   const blogContents = document.querySelectorAll(".blog-content");
   const blogMoreLinks = document.querySelectorAll(".blog-more");
@@ -142,7 +165,8 @@
       if (blogContents[index].style.maxHeight === "500px") {
         blogContents[index].style.maxHeight = "none";
         link.textContent = "See less";
-      } else {
+      } 
+      else {
         blogContents[index].style.maxHeight = "500px";
         link.textContent = "See more";
       }
