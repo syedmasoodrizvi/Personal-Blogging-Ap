@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile</title>
+<style>
+ 
+  /* #navbar {
+    display: flex;
+    align-items: center;
+    background-color: #8816f1;
+    color: white;
+    padding: 10px 20px;
+    height: 25px;
+    margin-top: -620px;
+    width: 100%;
+  }
+ 
+  #login {
+    text-decoration: none;
+    color: white;
+    margin-left: auto;
+  } */
+
+  #blogs-section {
+    margin: 40px;
+    margin-left: 100px;
+    
+  }
+  .blog {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 60%;
+  }
+  .blog-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .blog-content {
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    max-height: 500px; /* Initial height */
+    transition: max-height 0.3s ease;
+  }
+  .blog-more {
+    color: #007bff;
+    cursor: pointer;
+  }
+  .blog-meta {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #888;
+  }
+  .blog-meta img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    margin-right: 10px;
+  }
+  #publish{
+    width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    height: 100%;
+
+  }
+  #button {
+    background-color:rgb(18, 7, 160);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  
+  }
+  #input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  #textarea{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+  .profile-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+ 
+  }
+  #profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px;
+    cursor: pointer;
+  }
+  #name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  #edit-name {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 5px;
+    width: 100%;
+  }
+  #password-section {
+    margin-top: 20px;
+  }
+  #password-heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .password-input {
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+  }
+  #update-button {
+    background-color: #8816f1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 540px;
+  }
+</style>
+</head>
+<body>
+    <!-- <div id="navbar">
+        <div id="navbar-logo"><h4>Personal Blogging App</h4></div>
+        <a id="login" href="./Login.html">Login</a>
+      </div>
+<div style="background-color: white; margin-top: -20px; height: 70px;">
+     -->
+    
+    <h1 style="margin-top: -550px;margin-left: -200px;"> Profile</h1> 
+    
+
+
+<div class="profile-container">
+    <img id="profile-picture" src="./pngtree-user-icon-png-image_1796659.jpg" alt="Profile Picture">
+    <div id="name"> abc</div>
+    <input id="edit-name" type="text" value="abc" placeholder="Edit Name">
+    
+    <div id="password-section">
+      <h2 id="password-heading">Password</h2>
+      <input class="password-input" type="password" placeholder="Old Password">
+      <input class="password-input" type="password" placeholder="New Password">
+      <input class="password-input" type="password" placeholder="Repeat Password">
+    </div>
+    
+    <button id="update-button">Update</button>
+  </div>
+  <script>
+    const profilePicture = document.getElementById("profile-picture");
+    const editNameInput = document.getElementById("edit-name");
+    const nameDisplay = document.getElementById("name");
+    const updateButton = document.getElementById("update-button");
+  
+    profilePicture.addEventListener("click", () => {
+      // Implement logic to upload and change profile picture
+      console.log("Profile picture clicked");
+    });
+  
+    editNameInput.addEventListener("input", () => {
+      nameDisplay.textContent = editNameInput.value;
+    });
+  
+    updateButton.addEventListener("click", () => {
+      // Implement logic to update profile and password
+      console.log("Update button clicked");
+    });
+ 
+    
+  const blogContents = document.querySelectorAll(".blog-content");
+  const blogMoreLinks = document.querySelectorAll(".blog-more");
+
+  blogMoreLinks.forEach((link, index) => {
+    link.addEventListener("click", () => {
+      if (blogContents[index].style.maxHeight === "500px") {
+        blogContents[index].style.maxHeight = "none";
+        link.textContent = "See less";
+      } else {
+        blogContents[index].style.maxHeight = "500px";
+        link.textContent = "See more";
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
